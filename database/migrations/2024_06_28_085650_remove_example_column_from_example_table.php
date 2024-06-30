@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('todo', function (Blueprint $table) {
-            $table->id();
-            $table->string("title", length:20);
-            $table->string("contect", length:150);
-            $table->boolean("isCompleted")->default(0);
-            $table->timestamps();
+        Schema::table('todo', function (Blueprint $table) {
+            $table->dropColumn('contect');
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('todolist');
+        Schema::table('todo', function (Blueprint $table) {
+            //
+        });
     }
 };

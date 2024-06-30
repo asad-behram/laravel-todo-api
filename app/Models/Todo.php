@@ -21,7 +21,6 @@ class Todo extends Model
         $createdTodo = array_map(function($attribute) {
             $todo = new self();
             $todo->title = $attribute["title"];
-            $todo->contect = $attribute["contect"];
             $todo->isCompleted = $attribute["isCompleted"];
             $todo->save();
             return $todo;
@@ -60,7 +59,6 @@ class Todo extends Model
             throw new ModelNotFoundException("Cant find todo");
         }
         $todo->title = $attributes["title"];
-        $todo->contect = $attributes["contect"];
         $todo->save();
         return $todo;
     }
