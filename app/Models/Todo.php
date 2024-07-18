@@ -58,7 +58,7 @@ class Todo extends Model
         if($todo == null){
             throw new ModelNotFoundException("Cant find todo");
         }
-        $todo->title = $attributes["title"];
+        $todo->isCompleted = $attributes["isCompleted"];
         $todo->save();
         return $todo;
     }
